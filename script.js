@@ -36,6 +36,7 @@ const closeCart = document.getElementById('closeCart');
 const cartCount = document.getElementById('cartCount');
 const cartItemsContainer = document.getElementById('cartItems');
 const cartTotal = document.getElementById('cartTotal');
+const clearCartBtn = document.getElementById('clearCartBtn');
 const toastNotification = document.getElementById('toastNotification');
 const toastText = document.getElementById('toastText');
 
@@ -82,9 +83,11 @@ function updateCart() {
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = '<p style="text-align: center; color: var(--gray-medium); margin-top: 2rem;">Tu carrito está vacío</p>';
         cartTotal.textContent = '$0 COP';
+        clearCartBtn.style.display = 'none'; // Ocultar botón vaciar si está vacío
         return;
     }
 
+    clearCartBtn.style.display = 'block'; // Mostrar botón vaciar si hay elementos
     cartItemsContainer.innerHTML = '';
     let total = 0;
 
@@ -119,6 +122,12 @@ function changeQuantity(productId, delta) {
     }
     updateCart();
 }
+
+// Función para vaciar el carrito por completo
+clearCartBtn.addEventListener('click', () => {
+    cart = [];
+    updateCart();
+});
 
 document.getElementById('checkoutWhatsapp').addEventListener('click', () => {
     if (cart.length === 0) {

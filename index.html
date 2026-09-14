@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVA | Ropa Deportiva - Muévete. Inspira. Evoluciona.</title>
+    <meta name="description" content="Marca de ropa deportiva inspirada en el movimiento, la confianza y el bienestar. Prendas para hombres y mujeres.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">MO<span>VA</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Menú">☰</button>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="#catalogo">Colección</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#mision-vision">Misión y Visión</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+            <button class="icon-btn" id="cartBtn" aria-label="Abrir carrito">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <span class="slogan-tag">Muévete. Inspira. Evoluciona.</span>
+        <h1>Ropa Deportiva de Alto Rendimiento</h1>
+        <p>Prendas diseñadas para hombres y mujeres que integran funcionalidad, comodidad y estilo moderno para tu día a día[cite: 2].</p>
+        <a href="#catalogo" class="btn-primary">Ver Colección</a>
+    </section>
+
+    <main>
+        <section id="catalogo">
+            <h2>Nuestra Colección</h2>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <section id="nosotros">
+            <h2>Sobre MOVA S.A.S.</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>¿Quiénes somos?</h3>
+                    <p>MOVA nace inspirada en el movimiento, el bienestar y el crecimiento personal. Ofrecemos ropa deportiva versátil para actividades como yoga, pilates, entrenamiento funcional, gimnasio y uso cotidiano[cite: 2].</p>
+                </div>
+                <div class="about-card">
+                    <h3>Nuestros Valores</h3>
+                    <p>Nos enfocamos en la disciplina, la superación personal y la calidad superior. Contamos con métodos de pago seguros, pasarela PSE y envíos para acompañar tu estilo de vida activo[cite: 2].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mision-vision">
+            <h2>Compromiso y Futuro</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Misión</h3>
+                    <p>Somos una marca de ropa deportiva comprometida con inspirar bienestar, confianza y movimiento en cada persona, combinando calidad, comodidad y diseño excepcional[cite: 2].</p>
+                </div>
+                <div class="about-card">
+                    <h3>Visión 2030</h3>
+                    <p>Para el año 2030, MOVA será reconocida como una de las marcas líderes de ropa deportiva en Colombia, destacándose por la innovación, calidad y comunidad[cite: 2].</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CARRITO DE COMPRAS LATERAL -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3>Tu Carrito MOVA</h3>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p style="text-align: center; color: var(--gray-medium); margin-top: 2rem;">Tu carrito está vacío</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0 COP</span>
+                </div>
+                <button class="btn-whatsapp" id="checkoutWhatsapp">
+                    💬 Finalizar compra por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN TOAST ANIMADA -->
+    <div class="toast-notification" id="toastNotification">
+        <span>✨</span>
+        <span id="toastText">¡Producto añadido al carrito!</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MOVA S.A.S. | Todos los derechos reservados. Jamundí / Cali, Valle del Cauca[cite: 2].</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -2,9 +2,8 @@
     --bg-color: #f8fafc;
     --text-color: #0f172a;
     --primary-color: #111827;
-    --accent-color: #059669; /* Verde esmeralda corporativo */
+    --accent-color: #059669;
     --accent-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
-    --hero-gradient: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
     --card-bg: #ffffff;
     --border-color: #e2e8f0;
     --gray-medium: #64748b;
@@ -18,7 +17,6 @@
     --primary-color: #f8fafc;
     --accent-color: #10b981;
     --accent-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-    --hero-gradient: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
     --card-bg: #111827;
     --border-color: #1f2937;
     --gray-medium: #94a3b8;
@@ -170,32 +168,20 @@ nav a:hover {
     color: var(--text-color);
 }
 
+/* HERO CON FOTO DE FONDO PROFESIONAL Y CAPA OSCURA */
 .hero {
-    padding: 12rem 5% 8rem 5%;
+    padding: 13rem 5% 9rem 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: var(--hero-gradient);
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
     color: #ffffff;
     position: relative;
-    overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(5, 150, 105, 0.3) 0%, transparent 70%);
-    top: -200px;
-    right: -200px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.hero > * {
-    position: relative;
+.hero-content {
+    max-width: 900px;
     z-index: 2;
 }
 
@@ -206,10 +192,11 @@ nav a:hover {
     letter-spacing: 5px;
     font-size: 0.8rem;
     margin-bottom: 1.2rem;
-    background: rgba(5, 150, 105, 0.25);
-    border: 1px solid rgba(52, 211, 153, 0.4);
+    background: rgba(5, 150, 105, 0.3);
+    border: 1px solid rgba(52, 211, 153, 0.5);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
+    display: inline-block;
 }
 
 .hero h1 {
@@ -218,14 +205,13 @@ nav a:hover {
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
     line-height: 1.1;
-    max-width: 900px;
 }
 
 .hero p {
     font-size: 1.15rem;
-    color: #cbd5e1;
+    color: #e2e8f0;
     max-width: 650px;
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5 auto;
     font-weight: 400;
 }
 
@@ -592,6 +578,9 @@ h2::after {
     border-top: 1px solid var(--border-color);
     padding-top: 1.5rem;
     margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .cart-total {
@@ -599,7 +588,7 @@ h2::after {
     justify-content: space-between;
     font-size: 1.25rem;
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .cart-total span:last-child {
@@ -629,6 +618,24 @@ h2::after {
     background-color: #20ba5a;
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+}
+
+.btn-clear {
+    background: transparent;
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-clear:hover {
+    background: #ef4444;
+    color: white;
 }
 
 footer {
